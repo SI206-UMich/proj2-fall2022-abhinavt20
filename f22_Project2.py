@@ -6,7 +6,7 @@ import csv
 import unittest
 
 # Name: Abhinav Tadikonda
-# Worked with: Mia Friedman 
+# Worked with: Mia Friedman, Chris Sayad, Elizabeth Kim
 
 
 def get_listings_from_search_results(html_file):
@@ -264,11 +264,11 @@ class TestCases(unittest.TestCase):
             # check that the third element in the tuple is an int
             self.assertEqual(type(listing_information[2]), int)
         # check that the first listing in the html_list has policy number 'STR-0001541'
-        self.assertEqual(listing_information[0], "STR-0001541")
+        self.assertEqual(listing_informations[0][0], "STR-0001541")
         # check that the last listing in the html_list is a "Private Room"
-        self.assertEqual(listing_information[4], "Private Room")
+        self.assertEqual(listing_informations[-1][1], "Private Room")
         # check that the third listing has one bedroom
-        self.assertEqual(listing_information[2], 1)
+        self.assertEqual(listing_informations[2][2], 1)
 
     def test_get_detailed_listing_database(self):
         # call get_detailed_listing_database on "html_files/mission_district_search_results.html"
@@ -323,7 +323,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(type(invalid_listings), list)
         # check that there is exactly one element in the string
        
-        # self.assertEqual(len(invalid_listings), 1)
+        self.assertEqual(len(invalid_listings), 1)
 
         # check that the element in the list is a string
         self.assertEqual(type(invalid_listings[0]), str)
