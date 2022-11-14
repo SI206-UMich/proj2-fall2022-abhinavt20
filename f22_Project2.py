@@ -6,7 +6,7 @@ import csv
 import unittest
 
 # Name: Abhinav Tadikonda
-# Worked with: Mia Friedman, Chris Sayad, Elizabeth Kim
+# Worked with: Mia Friedman, Elizabeth Kim, Stella Young
 
 
 def get_listings_from_search_results(html_file):
