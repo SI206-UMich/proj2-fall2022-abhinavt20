@@ -195,7 +195,7 @@ def check_policy_numbers(data):
     pattern_1 = '20\d\d\-00\d\d\d\dSTR|STR\-000\d\d\d\d'
     for x in data:
         policy_list = re.findall(pattern_1, x[3])
-        if len(policy_list) == 0 and x[3] != "Pending" and x[3] != "Exempt":
+        if (len(policy_list) == 0 and x[3] != "Pending" and x[3] != "Exempt" and "not" not in x[3]):
             not_match.append(x[2])
     return not_match
 
